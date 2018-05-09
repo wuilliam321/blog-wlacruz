@@ -1,0 +1,13 @@
+# Node
+/node_modules/
+/*.log
+
+# Library
+package-lock.json
+
+# Distribution & Builds
+/dist/
+
+# Environment
+.env
+.idea/

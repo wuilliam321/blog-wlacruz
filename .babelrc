@@ -1,0 +1,25 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "modules": false,
+          "browsers": [
+            "last 2 versions",
+            "safari >= 7"
+          ]
+        }
+      }
+    ],
+    "react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "autobind-class-methods",
+    "transform-decorators-legacy",
+    "transform-object-assign",
+    "transform-object-rest-spread",
+    "transform-class-properties"
+  ]
+}
