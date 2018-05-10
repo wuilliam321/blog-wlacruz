@@ -1,9 +1,9 @@
 import React from 'react';
-import { Route, Router, Switch } from 'react-router-dom';
+import {Route, Router, Switch} from 'react-router-dom';
 import history from './history';
-import HomePage from './Pages/home/HomePage';
-import Sidebar from './Pages/common/Sidebar';
-import PostPage from './Pages/post/PostPage';
+import HomePage from './Pages/Posts/HomePage';
+import Sidebar from './Pages/Common/Sidebar';
+import PostPage from './Pages/Post/PostPage';
 
 const AppRouter = () => (
   <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Content from '../common/Content';
+import Content from '../Common/Content';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -7,31 +7,31 @@ class HomePage extends React.Component {
     this.state = {
       posts: [
         {
-          title: 'This is a title post',
+          title: 'This is a title Post',
           content: 'This is a **bolded** markdown text',
           author: 'Wuilliam Lacruz',
           date: '2018-10-01'
         },
         {
-          title: 'This is a title post',
+          title: 'This is a title Post',
           content: 'This is a **bolded** markdown text',
           author: 'Wuilliam Lacruz',
           date: '2018-10-01'
         },
         {
-          title: 'This is a title post',
+          title: 'This is a title Post',
           content: 'This is a **bolded** markdown text',
           author: 'Wuilliam Lacruz',
           date: '2018-10-01'
         },
         {
-          title: 'This is a title post',
+          title: 'This is a title Post',
           content: 'This is a **bolded** markdown text',
           author: 'Wuilliam Lacruz',
           date: '2018-10-01'
         },
         {
-          title: 'This is a title post',
+          title: 'This is a title Post',
           content: 'This is a **bolded** markdown text',
           author: 'Wuilliam Lacruz',
           date: '2018-10-01'
