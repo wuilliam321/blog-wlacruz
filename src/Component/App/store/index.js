@@ -18,9 +18,12 @@ if (__DEV__) {
   middleware.push(logger);
 }
 
-const devTool = (__DEV__ && typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__)
-  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-  : compose;
+const devTool =
+  __DEV__ &&
+  typeof window !== 'undefined' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    : compose;
 
 const store = createStore(reducers, devTool(applyMiddleware(...middleware)));
 

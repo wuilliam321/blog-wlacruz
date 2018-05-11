@@ -10,7 +10,8 @@ const FAILURE = 'FAILURE';
 const CLEAN = 'CLEAN';
 const SINGLE = 'SINGLE';
 
-const action = (actionName) => BASE_REG.test(actionName) ? actionName : `${BASE}/${actionName}`;
+const action = actionName =>
+  BASE_REG.test(actionName) ? actionName : `${BASE}/${actionName}`;
 
 export function createAction(actionName, payload = {}) {
   const type = action(actionName);
@@ -23,12 +24,14 @@ export function createAction(actionName, payload = {}) {
  * @param base
  * @param types
  */
-export function createGroupedTypes(base, types = [START, SUCCESS, FAILURE, CLEAN]) {
-  return types
-    .reduce((acc, type) => {
-      acc[type] = action(`${base}_${type}`);
-      return acc;
-    }, {});
+export function createGroupedTypes(
+  base,
+  types = [START, SUCCESS, FAILURE, CLEAN]
+) {
+  return types.reduce((acc, type) => {
+    acc[type] = action(`${base}_${type}`);
+    return acc;
+  }, {});
 }
 
 /**
@@ -48,11 +51,10 @@ export function createSingleType(base, suffix = SINGLE) {
  * @return {{}}
  */
 export function createGroupedActionCreators(types) {
-  return Object.keys(types)
-    .reduce((acc, type) => {
-      acc[camelCase(type)] = (payload) => createAction(types[type], payload);
-      return acc;
-    }, {});
+  return Object.keys(types).reduce((acc, type) => {
+    acc[camelCase(type)] = payload => createAction(types[type], payload);
+    return acc;
+  }, {});
 }
 
 /**
@@ -61,20 +63,24 @@ export function createGroupedActionCreators(types) {
  * @return {function(*=): {type, payload}}
  */
 export function createSingleActionCreator(type) {
-  return (payload) => createAction(type, payload);
+  return payload => createAction(type, payload);
 }
 
 export function combine(...actions) {
-  return (dispatch) => {
-    return actions
-      .reduce((acc, action) => Object.assign({}, acc, action(dispatch)), {});
+  return dispatch => {
+    return actions.reduce(
+      (acc, action) => Object.assign({}, acc, action(dispatch)),
+      {}
+    );
   };
 }
 
 export function bindActionsRequest(actionRequest, dispatch) {
-  return Object.keys(actionRequest)
-    .reduce((acc, action) => {
-      acc[camelCase(action)] = bindActionCreators(actionRequest[action], dispatch);
-      return acc;
-    }, {});
+  return Object.keys(actionRequest).reduce((acc, action) => {
+    acc[camelCase(action)] = bindActionCreators(
+      actionRequest[action],
+      dispatch
+    );
+    return acc;
+  }, {});
 }

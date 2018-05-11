@@ -8,11 +8,7 @@ import App from './Component/App';
  */
 
 function render(Component) {
-  ReactDOM.render(
-    <Component/>
-    ,
-    document.querySelector('#root')
-  );
+  ReactDOM.render(<Component />, document.querySelector('#root'));
 }
 
 render(App);

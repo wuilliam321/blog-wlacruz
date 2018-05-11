@@ -13,7 +13,7 @@ import store from './store';
  */
 const App = () => (
   <Provider store={store}>
-    <AppRouter/>
+    <AppRouter />
   </Provider>
 );
 

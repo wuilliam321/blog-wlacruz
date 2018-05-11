@@ -1,5 +1,6 @@
 {
   "extends": [
+    "prettier",
     "bixlabs",
     "plugin:react/recommended"
   ],
@@ -22,9 +23,11 @@
         "before": false,
         "after": true
       }
-    ]
+    ],
+    "prettier/prettier": ["error", { "singleQuote": true, "bracketSpacing": false}]
   },
   "plugins": [
-    "react"
+    "react",
+    "prettier"
   ]
 }

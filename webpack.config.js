@@ -9,10 +9,7 @@ const template = path.resolve(root, 'src', 'index.html.ejs');
 module.exports = {
   mode: 'development',
   context: path.join(root, 'src'),
-  entry: [
-    'babel-polyfill',
-    './index.js'
-  ],
+  entry: ['babel-polyfill', './index.js'],
   devtool: 'cheap-eval-source-map ',
   output: {
     publicPath: '/',
@@ -23,9 +20,18 @@ module.exports = {
   module: {
     rules: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
-      {test: /\.(css)$/, loaders: ['style-loader', 'css-loader', 'postcss-loader']},
-      {test: /\.(scss|sass)$/, loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']},
-      {test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|mp4)$/, loaders: ['url-loader?limit=8192']}
+      {
+        test: /\.(css)$/,
+        loaders: ['style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.(scss|sass)$/,
+        loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|mp4)$/,
+        loaders: ['url-loader?limit=8192']
+      }
     ]
   },
   plugins: [
